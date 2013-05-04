@@ -1,0 +1,9 @@
+<p>Welcome to official Karajlug SFD 2013</p>
+<h1>Remaining Days: <%= @remaining %></h1>
+<%= form_tag "/search" do %>
+<div class="box">
+  <%= label_tag :email, "Email:" %>
+  <%= text_field_tag :email %>
+  <%= submit_tag "Subscribe", class: "btn" %>
+</div>
+<% end %>
