@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+@font-face {
+  font-family: 'Droid Arabic Naskh';
+  src: url('/public/font/DroidNaskh-Regular.ttf') format('truetype'); /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+
+* {
+    font-family: 'Droid Arabic Naskh', serif;
+}
