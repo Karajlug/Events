@@ -1,11 +1,37 @@
-<div class="row text-center">
-    <h2><%=t :welcome %></h2>
-    <h1><%= @days %></h1>
-    </h5><%=t :ramaining_msg %></h5>
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="row">
+	<div class="span12">
+
+	  <ul class="nav">
+	    <li>
+	      <%= link_to t(:home), root_url %>
+	    </li>
+	  </ul>
+	</div>
+    </div>
+
+      </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row text-center">
+
+    <dl class="palette palette-info span10 offset1">
+      <dt><%= @days %></dt>
+      <dd><%=t :ramaining_msg %></dd>
+    </dl>
+
+    <h1></h1>
+</h5><%=t :ramaining_msg %></h5>
 </div>
 
 <%= form_for(@user) do |f| %>
-<div class="box row">
+<div class="row">
   <div class="span6 offset3">
     <% flash.each do |key, value| %>
     <div class="text-<%= key %>"><%= value %></div>
@@ -13,8 +39,9 @@
 
     <p><%=t :form_msg %></p>
     <%= f.text_field :email, placeholder: t(:email) + " ...", class: "span4", id: :email %>
-    <%= f.submit t(:submit), class: "btn", id: "submit" %>
+    <%= f.submit t(:submit), class: "btn btn-success", id: "submit" %>
 
   </div>
 </div>
 <% end %>
+</div>

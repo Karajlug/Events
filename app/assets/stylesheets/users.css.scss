@@ -1,44 +1,14 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$BG: #473F39;
+//@import "bootstrap";
+@import "twitter/bootstrap_rtl";
+@import "flat-ui";
 
-* {
-    padding: 0;
-    margin: 0;
-}
-html {
-    background: $BG;
-    color: white;
+.navbar-inverse .navbar-inner {
+    border-radius: 0;
 }
 
-.container {
-    width: 970px;
-    margin: 30px auto;
-}
-
-.text-center {
-    text-align: center;
-}
-
-h1 {
-
-    font-size: 200px;
-
-}
-
-form {
-    margin: 50px auto;
-    text-align: center;
-}
-input[type=text] {
-    border: 1px solid #dedede;
-    padding: 10px;
-    font-size: 20px;
-
-}
-input[type=submit] {
-    padding: 10px;
-    font-size: 20px;
-    border: 1px solid #afafaf;
+.navbar-inner {
+    border-radius: 0;
 }
