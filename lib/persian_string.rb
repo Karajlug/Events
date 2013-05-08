@@ -6,7 +6,7 @@ class String
     (0..9).each do |x|
 
       begin
-        str[x.to_s] = (zero + x).chr("utf-8")
+        str.gsub!(x.to_s, (zero + x).chr("utf-8"))
       rescue IndexError
       end
 

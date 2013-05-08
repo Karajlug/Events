@@ -11,8 +11,8 @@ gem 'sqlite3'
 group :assets do
   gem 'sass-rails',   '~> 4.0.0.beta1'
   gem 'coffee-rails', '~> 4.0.0.beta1'
+  gem "flat-ui-rails"
 
-  gem 'bootstrap-sass'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', platforms: :ruby
 
