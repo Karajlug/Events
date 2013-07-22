@@ -1,19 +1,19 @@
-source 'https://rubygems.org'
-ruby '2.0.0'
+source 'http://rubygems.org'
+#ruby '> 1.9.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.beta1'
+gem 'rails', '>= 4.0.0'
 
 gem 'sqlite3'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 4.0.0.beta1'
-  gem 'coffee-rails', '~> 4.0.0.beta1'
-  #gem "bootstrap-sass"
+  gem 'sass-rails',   '>= 4.0.0'
+  gem 'coffee-rails', '>= 4.0.0'
+  gem "bootstrap-sass"
   gem 'bootstrap-sass-rails-rtl'
-  gem "flat-ui-rails"
+  #gem "flat-ui-rails"
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', platforms: :ruby
@@ -40,3 +40,15 @@ gem 'jbuilder', '~> 1.0.1'
 
 # To use debugger
 # gem 'debugger'
+
+gem "fast_gettext"
+gem "gettext"
+gem "ruby_parser"
+gem 'gettext_i18n_rails'
+
+group :development do
+  gem "pry"
+  gem 'capistrano'
+  gem "better_errors"
+  gem "binding_of_caller"
+end

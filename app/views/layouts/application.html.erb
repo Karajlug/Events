@@ -1,12 +1,103 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="<%= I18n.locale %>" dir="rtl">
 <head>
+
+  <meta charset="UTF-8">
+
+  <meta name="description" content="KarajLug Karaj Linux users group">
+  <meta name="author" content="Sameer Rahmani - Behnam Ahmad Khan Beigi - Ebrahim Byagowi">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>SFD2013</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+  <link rel="shortcut icon" href="<%= asset_path("favicon.png") %>">
+
+  <%= stylesheet_link_tag    "twitter/bootstrap", media: "all", "data-turbolinks-track" => true %>
+
+  <% if I18n.locale == :fa %>
+    <%= stylesheet_link_tag    "twitter/bootstrap_rtl", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "bidi/style", media: "all", "data-turbolinks-track" => true %>
+  <% else %>
+    <%= stylesheet_link_tag    "fonts", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "style", media: "all", "data-turbolinks-track" => true %>
+
+  <% end -%>
+
+    <%= stylesheet_link_tag    "font-awesome.min", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "common", media: "all", "data-turbolinks-track" => true %>
+
 </head>
-<body>
-<%= yield %>
+<body   dir="<% if I18n.locale == :fa %>fa<% else %>en<% end %>">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container" id="topmenu">
+          <div class="row">
+	        <div class="span12">
+              <a class="brand" href="/"><b><%=  _("SFD") %></b></a>
+              <ul class="nav">
+                <li><a href="http://karajlug.org/"><%= _("Home") %></a></li>
+                <li><a href="/gallery"><%= _("Gallery") %></a></li>
+              </ul>
+
+              <ul class="nav pull-right">
+                <% if I18n.locale == :fa %>
+                <li><a href="/en"><%= _("English") %></a></li>
+                <% else %>
+                <li><a href="/fa"><%= _("Persian") %></a></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="maincontainer">
+      <%= yield %>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="span4 vspan4">
+        <div class="center span3">
+        <h3 class="ftitle"><%= _('Other Lugs') %>:</h3>
+          <ul>
+            <li><a href="http://tehlug.org/">{% trans 'Tehran Lug' %}</a></li>
+            <li><a href="http://www.isfahanlug.org/">{% trans 'Isfahan Lug' %}</a></li>
+            <li><a href="http://www.zanjanlug.org/">{% trans 'Zanjan Lug' %}</a></li>
+            <li><a href="http://www.mashhadlug.org/">{% trans 'Mashhad Lug' %}</a></li>
+          </ul>
+        </div>
+          </div>
+          <div class="span4 vspan4">
+        <div class="center span3">
+        <h3 class="ftitle">{% trans 'Useful links' %}:</h3>
+        <ul>
+          <li><a href="http://en.wikipedia.org/wiki/Linux_user_group">{% trans "What is LUG?" %}</a></li>
+          <li><a href="http://www.gnu.org/">{% trans 'GNU Project' %}</a></li>
+        </ul>
+          </div>
+        </div>
+          <div class="span4 vspan4">
+        <div class="center span4" id="follow">
+          <h3 class="ftitle">{% trans 'Karajlug in' %}:</h3>
+          <a href="https://github.com/Karajlug" ><i class="icon-github icon-3x"></i></a>
+          <a href="https://www.twitter.com/karajlug" ><i class="icon-twitter icon-3x"></i></a>
+          <a href="http://www.facebook.com/pages/KarajLug/113288182057531" ><i class="icon-facebook-sign icon-3x"></i></a>
+          <a href="/news/feed/" ><i class="icon-rss icon-3x"></i></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span12">
+        <p align="center"  class="small">©{% trans "Copyright 2010-2013 Karajlug Community" %}.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
 </body>
 </html>

@@ -1,0 +1,75 @@
+body {
+    direction: rtl;
+}
+#topmenu {
+    width: 940px;
+}
+#firstcontrols {
+    padding-right: 20px;
+}
+
+#sitetitle h1{
+    Background: url("/images/logo.png") right 0 no-repeat transparent;
+    text-indent: 100px;
+    height: 100px;
+    font-size: 40px;
+    padding-top: 15px;
+    margin-top: 40px;
+}
+
+#sitetitle p {
+    margin: -60px 100px 0 0px;
+    font-size: 15px;
+}
+
+.small {
+    font-size: 12px;
+}
+.ftitle {
+    font-size: 20px;
+}
+.nav li a {
+    font-size: 14px;
+}
+
+.sociallinks {
+    float: left;
+}
+
+.days {
+    padding-top: 50px;
+    width: 40%;
+    margin-left: 10%;
+    float: left;
+    text-align: center;
+
+}
+.intro {
+    padding-top: 50px;
+    width: 40%;
+    margin-right: 10%;
+    float: right;
+    text-align: center;
+}
+
+.dasy h1, .days h2 {
+    width: 100%;
+}
+.regform {
+}
+
+.regform .forminput span {
+    float: right;
+}
+
+.regform .forminput input[type=submit] {
+    float: left;
+
+}
+
+.logo {
+    Background: url("/images/logo.png") right 0 no-repeat transparent;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto;
+}

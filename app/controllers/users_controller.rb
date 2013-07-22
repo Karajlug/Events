@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     require 'date'
     require 'persian_string'
     @user = User.new
-    @days = (Date.new(2013, 10, 21) - Date.today).to_i.to_s.to_persian
+    @days = (Date.new(2013, 9, 21) - Date.today).to_i.to_s.to_persian
 
     @loc = I18n.default_locale
   end
