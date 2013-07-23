@@ -12,13 +12,4 @@
  *= require common
  *= require font-awesome.min
  *= require_self
- *= require_tree .
  */
-@font-face {
-  font-family: 'Droid Arabic Kufi';
-  src: url('/font/DroidKufi-Regular.ttf') format('truetype');
-}
-
-* {
-    font-family: 'Droid Arabic Kufi', serif;
-}
