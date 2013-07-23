@@ -8,8 +8,9 @@ gem 'sqlite3'
 
 # Gems used only for assets and not required
 # in production environments by default.
+gem 'sass-rails',   '>= 4.0.0'
+
 group :assets do
-  gem 'sass-rails',   '>= 4.0.0'
   gem 'coffee-rails', '>= 4.0.0'
   #gem "bootstrap-sass"
   #gem "twitter-bootstrap-rails"
