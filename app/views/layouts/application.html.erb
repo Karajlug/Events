@@ -15,22 +15,14 @@
 
   <link rel="shortcut icon" href="<%= asset_path("favicon.png") %>">
 
-  <%= stylesheet_link_tag    "twitter/bootstrap", media: "all", "data-turbolinks-track" => true %>
-
   <% if I18n.locale == :fa %>
-    <%= stylesheet_link_tag    "twitter/bootstrap_rtl", media: "all", "data-turbolinks-track" => true %>
-    <%= stylesheet_link_tag    "bidi/style", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "style_rtl", media: "all", "data-turbolinks-track" => true %>
   <% else %>
-    <%= stylesheet_link_tag    "fonts", media: "all", "data-turbolinks-track" => true %>
-    <%= stylesheet_link_tag    "style", media: "all", "data-turbolinks-track" => true %>
-
+  <%= stylesheet_link_tag    "style_ltr", media: "all", "data-turbolinks-track" => true %>
   <% end -%>
 
-    <%= stylesheet_link_tag    "font-awesome.min", media: "all", "data-turbolinks-track" => true %>
-    <%= stylesheet_link_tag    "common", media: "all", "data-turbolinks-track" => true %>
-
 </head>
-<body   dir="<% if I18n.locale == :fa %>fa<% else %>en<% end %>">
+<body   dir="<% if I18n.locale == :fa %>rtl<% else %>ltr<% end %>">
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container" id="topmenu">

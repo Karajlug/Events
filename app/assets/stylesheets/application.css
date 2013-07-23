@@ -9,7 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require twitter/bootstrap
+ *= require common
+ *= require font-awesome.min
  */
 @font-face {
   font-family: 'Droid Arabic Kufi';
