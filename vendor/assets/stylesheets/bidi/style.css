@@ -37,7 +37,7 @@ body {
 }
 
 .days {
-    padding-top: 50px;
+    padding-top: 100px;
     width: 40%;
     margin-left: 10%;
     float: left;
@@ -67,9 +67,9 @@ body {
 
 }
 
-.logo {
-    Background: url("/images/logo.png") right 0 no-repeat transparent;
-    width: 96px;
-    height: 96px;
-    margin: 0 auto;
+#topnav {
+    margin-right: 20px;
+}
+.alert {
+    text-align: right;
 }
