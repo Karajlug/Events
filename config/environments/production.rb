@@ -77,4 +77,5 @@ SFD2013::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  config.assets.precompile += %w( style_rtl.css style_ltr.css )
 end

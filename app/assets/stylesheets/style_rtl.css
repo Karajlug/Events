@@ -1,7 +1,4 @@
 /*
- *= require twitter/bootstrap_rtl
+ *= require bootstrap.rtl
  *= require bidi/style
-    <%= stylesheet_link_tag    "twitter/bootstrap_rtl", media: "all", "data-turbolinks-track" => true %>
-    <%= stylesheet_link_tag    "bidi/style", media: "all", "data-turbolinks-track" => true %>
-
 */

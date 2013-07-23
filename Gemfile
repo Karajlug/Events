@@ -11,8 +11,9 @@ gem 'sqlite3'
 group :assets do
   gem 'sass-rails',   '>= 4.0.0'
   gem 'coffee-rails', '>= 4.0.0'
-  gem "bootstrap-sass"
-  gem 'bootstrap-sass-rails-rtl'
+  #gem "bootstrap-sass"
+  #gem "twitter-bootstrap-rails"
+  #gem 'bootstrap-sass-rails-rtl'
   #gem "flat-ui-rails"
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
