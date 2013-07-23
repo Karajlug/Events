@@ -16,6 +16,8 @@ fa:
   Gallery: "گالری تصاویر"
   karajlug_in: "کرج لاگ در"
   share: "به اشتراک بگذارید"
+  copy_right_html: "کپی رایت ۲۰۱۳ اجتماع <a href='http://www.karajlug.org'>کرج لاگ</a>."
+
   active_admin:
     dashboard: Dashboard
     dashboard_welcome:
