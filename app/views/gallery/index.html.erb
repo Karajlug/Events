@@ -1,6 +1,21 @@
-<div class="container">
+<%= stylesheet_link_tag    "gallery", media: "all", "data-turbolinks-track" => true %>
 
-<% @albums.each do |album| -%>
-<h1><%= album.name %></h1>
-<% end -%>
+<div class="container maincontainer">
+  <% @albums.each do |album| -%>
+    <div class="row">
+      <div class="album span12">
+        <div class="album_name">
+          <h1><%= album.name %></h1>
+        </div>
+        <div class="album_menu">
+          <ul class="vertical">
+            <li><a href="<%= album_pictures_path(album.id) %>"><i class="icon-camera icon-4x"></a></i></li>
+            <li><a href="<%= album_videos_path(album.id) %>"><i class="icon-file-alt icon-4x"></i></a></li>
+            <li><a href="<%= album_docs_path(album.id) %>"><i class="icon-film icon-4x"></i></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end -%>
 </div>

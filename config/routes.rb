@@ -1,5 +1,5 @@
 SFD2013::Application.routes.draw do
-  get "gallery/index"
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,6 +10,9 @@ SFD2013::Application.routes.draw do
   resources :users, only: [:create]
 
   get "gallery" => "gallery#index"
+  get "gallery/:id/pictures" => "gallery#pictures", :as => :album_pictures
+  get "gallery/:id/videos" => "gallery#videos", :as => :album_videos
+  get "gallery/:id/docs" => "gallery#docs", :as => :album_docs
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
