@@ -1,4 +1,5 @@
 SFD2013::Application.routes.draw do
+  get "gallery/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
@@ -7,6 +8,8 @@ SFD2013::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'users#index'
   resources :users, only: [:create]
+
+  get "gallery" => "gallery#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
