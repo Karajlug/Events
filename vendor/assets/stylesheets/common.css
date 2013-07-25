@@ -116,8 +116,7 @@
 }
 
 .maincontainer {
-    min-height: 300px;
-    margin-top: 30px;
+    min-height: 300px;    
     margin-bottom: 30px;
     padding: 50px 0 150px 0;
 }
@@ -179,15 +178,13 @@ article {
     -o-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2) inset;
     border-bottom: 1px solid #adadad;
     border-top: 1px solid #adadad;
-    padding: 200px 0 0 0;
+    padding: 200px 0 40px 0;
 
 }
 section {
     width: 100%;
     margin: -40px 0 0 0;
     min-height: 600px;
-    height: 600px;
-
     text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
     -moz-text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
     -webkit-text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
@@ -282,6 +279,7 @@ section p {
 
 .logo {
     Background: url("/images/logo-white.png") right 0 no-repeat transparent;
+    background-size: contain;
     width: 200px;
     height: 202px;
     margin: -60px auto 30px;
@@ -293,10 +291,6 @@ section p {
     text-align: center;
     margin-top: 200px;
 
-}
- #social-nav li a {
-    margin: 12px 2px 0;
-    padding: 0 0px;
 }
 
 .vertical {

@@ -1,58 +1,76 @@
 
 <section class="address" id="sfd">
-  <div class="intro">
-    <div class="logo">
-    </div>
-    <br />
-    <h1><%=t :karaj_lug_running_sfd %></h1>
-    <h3><%=t :sfd_2013_celebration %></h3>
-  </div>
-  <div class="days">
-    <h1><%= @days %></h1>
-    <br /><br /><br />
-    <h2><%=t :ramaining_msg %></h2>
+  <div class="container">
+    <div class="row">
+      <div class="span6">
+        <div class="intro">
+          <div class="logo">
+          </div>
+          <br />
+          <h1><%=t :karaj_lug_running_sfd %></h1>
+          <h3><%=t :sfd_2013_celebration %></h3>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="days">
+          <h1><%= @days %></h1>
+          <br /><br /><br />
+          <h2><%=t :ramaining_msg %></h2>
 
-    <ul class="vertical share_this">
-    <li><%=t :share %>: </li>
-    <li><a href="https://www.twitter.com/karajlug" ><i class="icon-twitter icon-large"></i></a></li>
-    <li><a href="http://www.facebook.com/pages/KarajLug/113288182057531" ><i class="icon-facebook-sign icon-large"></i></a></li>
-    </ul>
+          <ul class="vertical share_this">
+            <li><%=t :share %>: </li>
+            <li><a href="https://www.twitter.com/karajlug" ><i class="icon-twitter icon-large"></i></a></li>
+            <li><a href="http://www.facebook.com/pages/KarajLug/113288182057531" ><i class="icon-facebook-sign icon-large"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="clearfix"></div>
 </section>
 
 
 <section class="sponsors"  id="what-is-sfd">
   <div class="container" >
-    <h1><%=t :what_is_sfd %></h1>
+    <div class="row">
+        <div class="span12">
+          <h1><%=t :what_is_sfd %></h1>
+        </div>
+    </div>    
   </div>
 </section>
 
 
 <section class="footer" id="i-want-to-participate">
   <div class="container text-center">
-    <h1><%=t :i_want_to_participate %></h1>
+    <div class="row">
+      <div class="span12">
+        <h1><%=t :i_want_to_participate %></h1>
 
-    <br /><br />
-    <%= form_for(@user) do |f| %>
-      <div class="regform">
+        <br /><br />
+        <%= form_for(@user) do |f| %>
+        <div class="regform">
 
-        <div class="forminput">
-          <% flash.each do |key, value| %>
+          <div class="forminput">
+            <% flash.each do |key, value| %>
             <div class="alert alert-<%= key %>">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
               <%= value %>
             </div>
-          <% end %>
-          <%= f.text_field :email, placeholder: t(:email) + " ...", id: :email %><br />
-          <span><%=t :form_msg %></span> <%= f.submit t(:submit), class: "btn btn-inverse", id: "submit" %>
+            <% end %>
+            <%= f.text_field :email, placeholder: t(:email) + " ...", id: :email %><br />
+            <%= f.submit t(:submit), class: "btn btn-inverse", id: "submit" %>
+            <span><%=t :form_msg %></span> 
+          </div>
+
         </div>
+        <% end %>
 
+        <div class="para">
+          <p><%=t :join_the_team_html %></p>
+        </div>
       </div>
-    <% end %>
-
-    <div class="para">
-        <p><%=t :join_the_team_html %></p>
-    </div>
+    </div>    
   </div>
 </section>
 

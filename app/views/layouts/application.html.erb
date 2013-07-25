@@ -1,58 +1,64 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>" dir="rtl">
-<head>
+  <head>
 
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <meta name="description" content="KarajLug Karaj Linux users group">
-  <meta name="author" content="Sameer Rahmani - Behnam Ahmad Khan Beigi - Ebrahim Byagowi">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KarajLug Karaj Linux users group">
+    <meta name="author" content="Sameer Rahmani - Behnam Ahmad Khan Beigi - Ebrahim Byagowi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SFD2013</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+    <title>SFD2013</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
 
-  <link rel="shortcut icon" href="<%= asset_path("favicon.png") %>">
+    <link rel="shortcut icon" href="<%= asset_path("favicon.png") %>">
+    <style>
+      body{padding-top:40px;}
+    </style>
+    
+    <% if I18n.locale == :fa %>
+    <%= stylesheet_link_tag    "style_rtl", media: "all", "data-turbolinks-track" => true %>
+    <% else %>
+    <%= stylesheet_link_tag    "style_ltr", media: "all", "data-turbolinks-track" => true %>
+    <% end -%>
 
-  <% if I18n.locale == :fa %>
-  <%= stylesheet_link_tag    "style_rtl", media: "all", "data-turbolinks-track" => true %>
-  <% else %>
-  <%= stylesheet_link_tag    "style_ltr", media: "all", "data-turbolinks-track" => true %>
-  <% end -%>
-
-</head>
-<body dir="<% if I18n.locale == :fa %>rtl<% else %>ltr<% end %>">
+  </head>
+  <body dir="<% if I18n.locale == :fa %>rtl<% else %>ltr<% end %>">
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
-        <div class="container" id="topmenu">
-          <div class="row">
-	    <div class="span12">
-              <a class="brand brandlogo" href="http://karajlug.org/"></a>
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand brandlogo" href="http://karajlug.org/"></a>
+          <div class="nav-collapse collapse">
+            <ul class="nav topnav">
+              <li><a href="#sfd"><%=t :sfd %></a></li>
+              <li><a href="#what-is-sfd"><%=t :what_is_sfd %></a></li>
+              <li><a href="#i-want-to-participate"><%=t :i_want_to_participate %></a></li>
+              <li><a href="#sponsors"><%=t :sponsors %></a></li>
 
-              <ul class="nav" id="topnav">
-                <li><a href="#sfd"><%=t :sfd %></a></li>
-                <li><a href="#what-is-sfd"><%=t :what_is_sfd %></a></li>
-                <li><a href="#i-want-to-participate"><%=t :i_want_to_participate %></a></li>
-                <li><a href="#sponsors"><%=t :sponsors %></a></li>
+              <li><a href="/gallery"><%=t :Gallery %></a></li>
+            </ul>
+            <ul class="nav pull-left top-nav" id="social-nav">
 
-                <li><a href="/gallery"><%=t :Gallery %></a></li>
-              </ul>
-              <ul class="nav pull-right" id="social-nav">
+              <li><a href="https://www.twitter.com/karajlug" ><i class="icon-twitter icon-large"></i></a></li>
+              <li><a href="http://www.facebook.com/pages/KarajLug/113288182057531" ><i class="icon-facebook-sign icon-large"></i></a></li>
 
-                <li><a href="https://www.twitter.com/karajlug" ><i class="icon-twitter icon-large"></i></a></li>
-                <li><a href="http://www.facebook.com/pages/KarajLug/113288182057531" ><i class="icon-facebook-sign icon-large"></i></a></li>
-
-              </ul>
-            </div>
-          </div>
+            </ul>
+          </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
-
-    <div class="maincontainer">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    
+    
+    <div class="">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
       <%= yield %>
     </div>
@@ -60,5 +66,5 @@
     <footer>
 
     </footer>
-</body>
+  </body>
 </html>

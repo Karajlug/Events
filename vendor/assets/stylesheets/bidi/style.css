@@ -1,8 +1,5 @@
 body {
-    direction: rtl;
-}
-#topmenu {
-    width: 940px;
+    direction: rtl;    
 }
 #firstcontrols {
     padding-right: 20px;
@@ -37,18 +34,11 @@ body {
 }
 
 .days {
-    padding-top: 100px;
-    width: 40%;
-    margin-left: 10%;
-    float: left;
+    padding-top: 100px;  
     text-align: center;
-
 }
 .intro {
     padding-top: 50px;
-    width: 40%;
-    margin-right: 10%;
-    float: right;
     text-align: center;
 }
 
@@ -67,9 +57,41 @@ body {
 
 }
 
-#topnav {
+.topnav {
     margin-right: 20px;
 }
 .alert {
     text-align: right;
+}
+
+.brandlogo{
+    background-position: center top;
+    width:30px;
+}
+
+
+@media (min-width: 980px) {
+    #social-nav li a {
+        margin: 12px 2px 0;
+        padding: 0 0px;
+    }
+}
+
+@media (max-width: 480px) {
+   
+   .logo{
+       width:150px;
+       margin-bottom:0px;
+   }
+   h1{font-size:25px}
+   h3{font-size:17px}
+   section p,.regform span{font-size:12px}
+   .days h1{font-size:150px}
+   .regform .forminput{width:90%;}
+}
+
+@media (max-width: 767px) {
+    .address,.footer{
+        padding:40px 0;
+    }
 }
