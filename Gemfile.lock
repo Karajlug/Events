@@ -90,6 +90,7 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.1.4)
+    callsite (0.0.11)
     capistrano (2.15.5)
       highline
       net-scp (>= 1.0.0)
@@ -140,6 +141,10 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_request (0.2.7)
+      callsite
+      rack-contrib
+      railties
     method_source (0.8.1)
     mime-types (1.23)
     minitest (4.7.5)
@@ -160,6 +165,8 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.4)
     rack (1.5.2)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.0)
@@ -228,6 +235,7 @@ DEPENDENCIES
   inherited_resources!
   jbuilder (~> 1.0.1)
   jquery-rails
+  meta_request
   pry
   rails (>= 4.0.0)
   ransack!
