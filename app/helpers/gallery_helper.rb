@@ -1,0 +1,3 @@
+module GalleryHelper
+
+end

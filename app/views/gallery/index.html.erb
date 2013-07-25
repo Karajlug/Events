@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag    "fancybox", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag    "gallery", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "fancybox", "data-turbolinks-track" => true %>
+
+<div>
+  <% @albums.each do |album| -%>
+    <section class="<%= cycle("address", "sponsors", "green-pad", "sponsors") %>">
+
+      <div class="album container">
+        <div class="album_name">
+          <h1><%= album.name %></h1>
+        </div>
+        <div class="album_menu">
+              <% album.media.each do |x| %>
+                <a class="fancybox" rel="fancybox-thumb" title="<%= x.desc %>" href="<%= x.file %>">
+                  <%= image_tag x.file.url(:thumb), :class => "image-border" %>
+                </a>
+              <% end %>
+        </div>
+      </div>
+    </section>
+  <% end -%>
+</div>
