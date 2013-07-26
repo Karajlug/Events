@@ -1,6 +1,9 @@
 source 'http://rubygems.org'
 #ruby '> 1.9.1'
 
+ENV['LANG'] = "UTF-8"
+ENV['LC_ALL'] = "en_US.utf8"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 4.0.0'
 
