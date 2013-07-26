@@ -1,0 +1,4 @@
+pushd ${OPENSHIFT_REPO_DIR} > /dev/null
+LANG="UTF-8" LC_ALL="en_US.utf8" bundle install
+LANG="UTF-8" LC_ALL="en_US.utf8" bundle exec rake db:migrate RAILS_ENV="production"
+popd > /dev/nulle

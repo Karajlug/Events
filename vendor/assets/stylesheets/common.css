@@ -174,6 +174,8 @@ article {
     border-bottom: 1px solid #adadad;
     border-top: 1px solid #adadad;
     padding: 200px 0 0 0;
+    min-height: 700px;
+    height: 700px;
 
 }
 section {
