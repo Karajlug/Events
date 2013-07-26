@@ -11,5 +11,6 @@
  *= require bootstrap.min
  *= require common
  *= require font-awesome.min
+ *= require gallery
  *= require_self
  */
