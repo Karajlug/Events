@@ -1,2 +1,4 @@
+echo "Install Gems ..."
 LANG="UTF-8" LC_ALL="en_US.utf8" RAILS_ENV=production bundle install
+echo "Precompile assets ..."
 LANG="UTF-8" LC_ALL="en_US.utf8" RAILS_ENV=production bundle exec rake assets:precompile
