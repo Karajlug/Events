@@ -2,7 +2,7 @@
 <%= stylesheet_link_tag    "gallery", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "fancybox", "data-turbolinks-track" => true %>
 
-<div>
+<div class="gallery">
   <% @albums.each do |album| -%>
     <section class="<%= cycle("address", "sponsors", "green-pad", "sponsors") %>">
 
