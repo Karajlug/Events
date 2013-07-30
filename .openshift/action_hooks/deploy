@@ -1,6 +1,7 @@
 #! /usr/bin/bash
 
 pushd ${OPENSHIFT_REPO_DIR} > /dev/null
+echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 RAILS_ENV=production bundle exec rake db:migrate
 STORED_ASSETS="${OPENSHIFT_DATA_DIR}/assets/gallery"
 LIVE_ASSETS="${OPENSHIFT_REPO_DIR}/public/assets"
