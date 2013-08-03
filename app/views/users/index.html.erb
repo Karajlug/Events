@@ -14,8 +14,8 @@
 
     <ul class="vertical share_this">
     <li><%=t :share %>: </li>
-    <li><a href="https://www.twitter.com/karajlug" ><i class="icon-twitter icon-large"></i></a></li>
-    <li><a href="http://www.facebook.com/pages/KarajLug/113288182057531" ><i class="icon-facebook-sign icon-large"></i></a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=KarajLug&text=جشن روز آزادی نرم افزار ۲۰۱۳&url=http%3A//sfd.karajlug.org/" ><i class="icon-twitter icon-large"></i></a></li>
+    <li><a href="http://www.facebook.com/sharer.php?u=http%3A//sfd.karajlug.org/&t=جشن روز آزادی نرم افزار ۲۰۱۳" ><i class="icon-facebook-sign icon-large"></i></a></li>
     </ul>
   </div>
 </section>
@@ -24,6 +24,7 @@
 <section class="sponsors"  id="what-is-sfd">
   <div class="container" >
     <h1><%=t :what_is_sfd %></h1>
+    <p class="big-text what-is-sfd"><%=t :sfd_is_html %></p>
   </div>
 </section>
 
@@ -38,8 +39,8 @@
 
         <div class="forminput">
           <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>">
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <div id="alert" class="alert alert-<%= key %>">
+              <button type="button" class="close pull-left" data-dismiss="alert" onclick="$('#alert').fadeOut();">&times;</button>
               <%= value %>
             </div>
           <% end %>
@@ -59,6 +60,21 @@
 <section class="sponsors" id="sponsors">
   <div class="container">
     <h1><%=t :sponsors %>:</h1>
+
+    <div class="row" style="margin-top: 30px;">
+
+        <div class="span3 text-center">
+          <a href="//karaj.ir"><%= image_tag("muni.png") %></a>
+        </div>
+        <div class="span4 text-center" style="margin-top: 50px;">
+          <a href="//karanic.com"><%= image_tag("karanic.png") %></a>
+        </div>
+        <div class="span4 text-center" style="margin-top: 110px;">
+          <a href="//yellowen.com" ><%= image_tag("yellowen.png") %></a>
+        </div>
+
+
+    </div>
   </div>
 
 </section>
