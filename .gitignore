@@ -15,3 +15,6 @@ public/assets/
 /log/*.log
 /tmp
 public/assets/gallery/*
+
+# rubymine
+.idea
