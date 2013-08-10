@@ -15,6 +15,12 @@
 
   <link rel="shortcut icon" href="<%= asset_path("favicon.png") %>">
 
+  <style type="text/css">
+      body{
+          padding-top: 20px;
+      }
+  </style>
+
   <% if I18n.locale == :fa %>
   <%= stylesheet_link_tag    "style_rtl", media: "all", "data-turbolinks-track" => true %>
   <% else %>
@@ -22,33 +28,35 @@
   <% end -%>
 
 </head>
-<body dir="<% if I18n.locale == :fa %>rtl<% else %>ltr<% end %>">
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container" id="topmenu">
-          <div class="row">
-	    <div class="span12">
-              <a class="brand brandlogo" href="http://karajlug.org/"></a>
+<body dir="<% if I18n.locale == :fa %>rtl<% else %>ltr<% end %>" id="sfd">
 
-              <ul class="nav" id="topnav">
-                <li><a href="/#sfd"><%=t :sfd %></a></li>
-                <li><a href="/#what-is-sfd"><%=t :what_is_sfd %></a></li>
-                <li><a href="/#i-want-to-participate"><%=t :i_want_to_participate %></a></li>
-                <li><a href="/#sponsors"><%=t :sponsors %></a></li>
+<div class="navbar navbar-fixed-top" data-spy="affix" data-offset-top="10">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="brand" href="#"></a>
+      <div class="nav-collapse collapse">
+        <ul class="nav" id="topnav">
+          <li><a href="#sfd"><%=t :sfd %></a></li>
+          <li><a href="#what-is-sfd"><%=t :what_is_sfd %></a></li>
+          <li><a href="#i-want-to-participate"><%=t :i_want_to_participate %></a></li>
+          <li><a href="#sponsors"><%=t :sponsors %></a></li>
 
-                <li><a href="/gallery"><%=t :Gallery %></a></li>
-              </ul>
-              <ul class="nav pull-right" id="social-nav">
-
-                <li><a href="https://www.twitter.com/karajlug" ><i class="icon-twitter icon-large"></i></a></li>
-                <li><a href="http://www.facebook.com/pages/KarajLug/113288182057531" ><i class="icon-facebook-sign icon-large"></i></a></li>
-
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+          <li><a href="/gallery"><%=t :Gallery %></a></li>
+        </ul>
+        <ul class="nav pull-left" id="socialicon">
+          <li><a href="https://www.twitter.com/karajlug"><i class="icon-twitter icon-large"></i></a></li>
+          <li><a href="http://www.facebook.com/pages/KarajLug/113288182057531"><i class="icon-facebook-sign icon-large"></i></a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
     </div>
+  </div>
+</div>
+
 
     <div class="maincontainer">
       <% if alert or notice %>
@@ -61,6 +69,13 @@
     <footer>
       © <%=t :copy_right_html %>
     </footer>
+
+<script type="text/javascript">
+    $('.nav li a').scrollTo();
+    $.scrollUp({
+        scrollText: ''
+    });
+</script>
 
 </body>
 </html>

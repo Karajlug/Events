@@ -1,0 +1,257 @@
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    src: url('/font/DroidKufi-Regular.ttf') format('truetype');
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.1px;
+    font-family: 'Droid Arabic Kufi', serif;
+
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.navbar .brand{
+    background-image: url('/images/logo.png');
+    background-repeat: no-repeat ;
+    background-position: center top;
+    width: 32px;
+    height: 16px;
+    margin-top: 4px;
+}
+
+#socialicon li a{
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.address {
+    Background: #f1f1f1;
+    color: white;
+    background-image: radial-gradient(circle, #44aaff 30%, #2299ee 100%);
+    background-image: -webkit-radial-gradient(circle, #44aaff 30%, #2299ee 100%);
+    background-image: -moz-radial-gradient(circle farthest-corner at center center , #44aaff 30%, #2299ee 100%);
+    background-image: -o-radial-gradient(circle, #44aaff 30%, #2299ee 100%);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2) inset;
+    -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2) inset;
+    -o-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2) inset;
+    border-bottom: 1px solid #adadad;
+    border-top: 1px solid #adadad;
+    height: 700px;
+
+}
+
+.sponsors {
+    color: #4f4f4f;
+    padding: 150px 0 0 0;
+    min-height: 800px;
+}
+
+.green-pad {
+    z-index: 50;
+    color : white;
+    Background: #5f5f5f;
+    color: white;
+    background-image: radial-gradient(circle, #7BBB3E 30%, #5BA437 100%);
+    background-image: -webkit-radial-gradient(circle, #7BBB3E 30%, #5BA437 100%);
+    background-image: -moz-radial-gradient(circle farthest-corner at center center , #7BBB3E 30%, #5BA437 100%);
+    background-image: -o-radial-gradient(circle, #7BBB3E 30%, #5BA437 100%);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2) inset;
+    -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2) inset;
+    -o-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2) inset;
+    border-bottom: 1px solid #adadad;
+    border-top: 1px solid #adadad;
+
+}
+
+section {
+    width: 100%;
+    min-height: 600px;
+    height: 600px;
+
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    -moz-text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    -webkit-text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    -o-text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.5;
+    padding-top: 10px;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #4f4f4f;
+}
+
+#share_this {
+    margin-top: 50px;
+}
+
+#share_this li{
+    margin: 0 5px;
+}
+#share_this a{
+    color: #FFF;
+}
+#share_this a:hover{
+    color: #f9d52f;
+}
+
+#days, #intro{
+    text-align: center;
+}
+#days h1{
+    font-size: 250px;
+    line-height: 250px;
+}
+.vertical li{
+    display: inline;
+}
+
+#intro .logo {
+    Background: url("/images/logo-white.png") center center no-repeat transparent;
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+    display:block;
+    height:220px;
+    width: 220px;
+    -moz-background-size:cover;
+    -webkit-background-size:cover;
+    background-size:cover;
+    margin:0 auto;
+}
+
+.big-text {
+    font-size: 30px;
+}
+
+.what-is-sfd {
+    margin-top: 120px;
+    text-align: justify;
+}
+
+#i-want-to-participate{
+    text-align: center;
+}
+
+
+#scrollUp {
+    bottom: 20px;
+    right: 20px;
+    height: 38px;
+    width: 38px;
+    background: url('/images/top.png') no-repeat;
+}
+
+@media (min-width: 1200px) {
+    section{
+        padding-top: 200px;
+    }
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+    section{
+        padding-top: 150px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+    #socialicon li a{
+        padding: 9px 15px;
+    }
+
+    #days h1{
+        font-size: 150px;
+        line-height: 150px;
+    }
+
+    section{
+        padding-top: 100px;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    #intro .logo {
+        width: 140px;
+        height: 140px;
+    }
+
+    #days{
+        margin-top:40px;
+    }
+
+    #days h1{
+        font-size: 80px;
+        line-height: 80px;
+    }
+
+    h1{
+        font-size: 1.6em;
+    }
+    h2{
+        font-size: 1.2em;
+    }
+    h3{
+        font-size: 1em;
+    }
+
+    .big-text{
+        font-size: 20px;
+    }
+    .what-is-sfd{
+        margin-top: 40px;
+    }
+
+    section{
+        padding-top: 50px;
+    }
+
+    div.forminput>input#email.span5{
+        width: 290px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    div.forminput>input#email.span5{
+        width: 100%;
+    }
+
+    #share_this{
+        margin: 0px;
+    }
+
+    #share_this #sharetext{
+        padding-bottom: 10px;
+        display: block;
+        margin:0;
+    }
+
+    #intro .logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .what-is-sfd{
+        margin-top: 20px;
+    }
+    .big-text{
+        font-size: 14px;
+    }
+
+    section p{
+        font-size: 14px;
+    }
+}

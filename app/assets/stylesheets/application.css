@@ -8,29 +8,6 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require bootstrap.min
- *= require common
- *= require font-awesome.min
  *= require gallery
  *= require_self
  */
-
-
-.big-text {
-    font-size: 30px;
-}
-.what-is-sfd {
-    margin-top: 120px;
-    text-align: justify;
-}
-a:hover {
-    text-decoration: none;
-}
-
-#alert {
-    padding: 8px;
-}
-
-#alert button {
-    padding-top: 3px;
-}
