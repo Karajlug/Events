@@ -1,80 +1,88 @@
-
-<section class="address" id="sfd">
-  <div class="intro">
-    <div class="logo">
+<section class="address">
+  <div class="container">
+    <div class="row">
+      <div class="span6">
+        <div id="intro">
+          <div class="logo"></div>
+          <br>
+          <h1><%=t :karaj_lug_running_sfd %></h1>
+          <h3><%=t :sfd_2013_celebration %></h3>
+        </div>
+      </div>
+      <div class="span6">
+        <div id="days">
+          <h1><%= @days %></h1>
+          <h2><%=t :ramaining_msg %></h2>
+          <ul id="share_this" class="vertical">
+            <li id="sharetext"><%=t :share %>:  </li>
+            <li><a href="https://twitter.com/intent/tweet?source=KarajLug&amp;text=جشن روز آزادی نرم افزار ۲۰۱۳&amp;url=http%3A//sfd.karajlug.org/"><i class="icon-twitter icon-large"></i></a></li>
+            <li><a href="http://www.facebook.com/sharer.php?u=http%3A//sfd.karajlug.org/&amp;t=جشن روز آزادی نرم افزار ۲۰۱۳"><i class="icon-facebook-sign icon-large"></i></a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <br />
-    <h1><%=t :karaj_lug_running_sfd %></h1>
-    <h3><%=t :sfd_2013_celebration %></h3>
-  </div>
-  <div class="days">
-    <h1><%= @days %></h1>
-    <br /><br /><br />
-    <h2><%=t :ramaining_msg %></h2>
-
-    <ul class="vertical share_this">
-    <li><%=t :share %>: </li>
-    <li><a href="https://twitter.com/intent/tweet?source=KarajLug&text=جشن روز آزادی نرم افزار ۲۰۱۳&url=http%3A//sfd.karajlug.org/" ><i class="icon-twitter icon-large"></i></a></li>
-    <li><a href="http://www.facebook.com/sharer.php?u=http%3A//sfd.karajlug.org/&t=جشن روز آزادی نرم افزار ۲۰۱۳" ><i class="icon-facebook-sign icon-large"></i></a></li>
-    </ul>
   </div>
 </section>
 
-
-<section class="sponsors"  id="what-is-sfd">
-  <div class="container" >
-    <h1><%=t :what_is_sfd %></h1>
-    <p class="big-text what-is-sfd"><%=t :sfd_is_html %></p>
+<section class="sponsors" id="what-is-sfd">
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <h1><%=t :what_is_sfd %></h1>
+      <p class="big-text what-is-sfd"><%=t :sfd_is_html %></p>
+    </div>
   </div>
+</div>
 </section>
-
 
 <section class="green-pad" id="i-want-to-participate">
-  <div class="container text-center">
+  <div class="container">
     <h1><%=t :i_want_to_participate %></h1>
 
-    <br /><br />
+    <br><br>
     <%= form_for(@user) do |f| %>
-      <div class="regform">
+            <div class="regform">
+                <br><br>
+                <div class="forminput">
+                  <% flash.each do |key, value| %>
+                      <div id="alert" class="alert alert-<%= key %>">
+                        <button type="button" class="close pull-left" data-dismiss="alert" onclick="$('#alert').fadeOut();">&times;</button>
+                        <%= value %>
+                      </div>
+                  <% end %>
 
-        <div class="forminput">
-          <% flash.each do |key, value| %>
-            <div id="alert" class="alert alert-<%= key %>">
-              <button type="button" class="close pull-left" data-dismiss="alert" onclick="$('#alert').fadeOut();">&times;</button>
-              <%= value %>
+                  <%= f.text_field :email, placeholder: t(:email) + " ...", id: :email %><br />
+                  <span><%=t :form_msg %></span> <%= f.submit t(:submit), class: "btn btn-inverse", id: "submit" %>
+
+                </div>
+                <br><br>
             </div>
-          <% end %>
-          <%= f.text_field :email, placeholder: t(:email) + " ...", id: :email %><br />
-          <span><%=t :form_msg %></span> <%= f.submit t(:submit), class: "btn btn-inverse", id: "submit" %>
-        </div>
-
-      </div>
     <% end %>
-
-    <div class="para">
-        <p><%=t :join_the_team_html %></p>
+        <div class="para">
+          <p><%=t :join_the_team_html %></p>
+        </div>
     </div>
-  </div>
 </section>
 
 <section class="sponsors" id="sponsors">
   <div class="container">
     <h1><%=t :sponsors %>:</h1>
 
-    <div class="row" style="margin-top: 30px;">
+    <div class="row">
 
-        <div class="span3 text-center">
-          <a href="//karaj.ir"><%= image_tag("muni.png") %></a>
-        </div>
-        <div class="span4 text-center" style="margin-top: 50px;">
-          <a href="//karanic.com"><%= image_tag("karanic.png") %></a>
-        </div>
-        <div class="span4 text-center" style="margin-top: 110px;">
-          <a href="//yellowen.com" ><%= image_tag("yellowen.png") %></a>
-        </div>
+      <div class="span3 text-center">
+        <a href="//karaj.ir"><%= image_tag("muni.png") %></a>
+      </div>
+      <div class="span4 text-center" style="margin-top: 50px;">
+        <a href="//karanic.com"><%= image_tag("karanic.png") %></a>
+      </div>
+      <div class="span4 text-center" style="margin-top: 110px;">
+        <a href="//yellowen.com" ><%= image_tag("yellowen.png") %></a>
+      </div>
 
 
     </div>
-  </div>
 
+  </div>
+  <div class="clearfix"></div>
 </section>

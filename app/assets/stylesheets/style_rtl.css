@@ -1,4 +1,6 @@
 /*
- *= require bootstrap.rtl
- *= require bidi/style
+ *= require bootstrap.min
+ *= require bootstrap-responsive.min
+ *= require font-awesome.min
+ *= require layout
 */
