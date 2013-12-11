@@ -1,13 +1,18 @@
 SFD2013::Application.routes.draw do
 
+  get "home/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
+
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root to: 'users#index'
+  root to: 'home#index'
   resources :users, only: [:create]
+
+  get "events/:id/register", :to => "participants#new", :as => "registeration"
+  post "events/:id/register", :to => "participants#create", :as => "registeration_post"
 
   get "gallery" => "gallery#index"
   get "gallery/:id/pictures" => "gallery#pictures", :as => :album_pictures

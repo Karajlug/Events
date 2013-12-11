@@ -1,0 +1,111 @@
+<section class="address" id="last-event">
+  <div class="container">
+    <div class="row">
+      <div class="span6">
+        <div id="intro">
+          <div class="logo"></div>
+          <br>
+          <h1><%=t :karaj_lug_running_sfd %></h1>
+          <h3><%= @event.name if @event %></h3>
+        </div>
+      </div>
+      <div class="span6">
+        <div id="days">
+          <h1><%= @days %></h1>
+          <h2><%=t :ramaining_msg %></h2>
+          <% if @event and @event.need_registration %><br />
+            <a href="/events/<%= @event.id %>/register" class="btn btn-large btn-inverse"><%=t :register_now %></a>
+          <% end %>
+          <ul id="share_this" class="vertical">
+            <li id="sharetext"><%=t :share %>:  </li>
+            <li><a href="https://twitter.com/intent/tweet?source=KarajLug&amp;text=جشن روز آزادی نرم افزار ۲۰۱۳&amp;url=http%3A//sfd.karajlug.org/"><i class="icon-twitter icon-large"></i></a></li>
+            <li><a href="http://www.facebook.com/sharer.php?u=http%3A//sfd.karajlug.org/&amp;t=جشن روز آزادی نرم افزار ۲۰۱۳"><i class="icon-facebook-sign icon-large"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sponsors" id="events">
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      <h1 class="text-center"><%=t :future_events %></h1>
+      <% if @future_events.count > 0 %>
+        <ul>
+          <% @future_events.each do |event| %>
+            <li><a href="#"><%= event.name %></a></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p><%=t :no_event %>
+      <% end %>
+    </div>
+    <div class="span6">
+      <h1 class="text-center"><%=t :past_events %></h1>
+      <% if @past_events.count > 0 %>
+        <ul>
+          <% @past_events.each do |event| %>
+            <li><a href="#"><%= event.name %></a></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p><%=t :no_event %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="green-pad" id="i-want-to-participate">
+  <div class="container">
+    <h1><%=t :i_want_to_participate %></h1>
+
+    <br><br>
+    <%= form_for(@user) do |f| %>
+            <div class="regform">
+                <br><br>
+                <div class="forminput">
+                  <% flash.each do |key, value| %>
+                      <div id="alert" class="alert alert-<%= key %>">
+                        <button type="button" class="close pull-left" data-dismiss="alert" onclick="$('#alert').fadeOut();">&times;</button>
+                        <%= value %>
+                      </div>
+                  <% end %>
+
+                  <%= f.text_field :email, placeholder: t(:email) + " ...", id: :email %><br />
+                  <span><%=t :form_msg %></span> <%= f.submit t(:submit), class: "btn btn-inverse", id: "submit" %>
+
+                </div>
+                <br><br>
+            </div>
+    <% end %>
+        <div class="para">
+          <p><%=t :join_the_team_html %></p>
+        </div>
+    </div>
+</section>
+
+<section class="sponsors" id="sponsors">
+  <div class="container">
+    <h1><%=t :sponsors %>:</h1>
+
+    <div class="row">
+
+      <div class="span3 text-center">
+        <a href="//karaj.ir"><%= image_tag("muni.png") %></a>
+      </div>
+      <div class="span4 text-center" style="margin-top: 50px;">
+        <a href="//karanic.com"><%= image_tag("karanic.png") %></a>
+      </div>
+      <div class="span4 text-center" style="margin-top: 110px;">
+        <a href="//yellowen.com" ><%= image_tag("yellowen.png") %></a>
+      </div>
+
+
+    </div>
+
+  </div>
+  <div class="clearfix"></div>
+</section>

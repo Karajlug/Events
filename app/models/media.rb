@@ -1,5 +1,5 @@
 class Media < ActiveRecord::Base
-  belongs_to :album
+  belongs_to :event
 
   has_attached_file :file, :styles => {
     :original => "1025x800>",

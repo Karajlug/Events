@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130724121529) do
+ActiveRecord::Schema.define(version: 20131211123535) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,15 +46,18 @@ ActiveRecord::Schema.define(version: 20130724121529) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
-  create_table "albums", force: true do |t|
+  create_table "events", force: true do |t|
     t.string   "name"
-    t.text     "desc"
+    t.text     "description"
+    t.text     "address"
+    t.datetime "datetime"
+    t.boolean  "need_registration"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "media", force: true do |t|
-    t.integer  "album_id"
+    t.integer  "event_id"
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -62,6 +65,16 @@ ActiveRecord::Schema.define(version: 20130724121529) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+  end
+
+  create_table "participants", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.integer  "cell_phone"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

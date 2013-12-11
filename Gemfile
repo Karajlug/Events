@@ -29,7 +29,7 @@ end
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+#gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
@@ -60,11 +60,12 @@ group :development do
 
 end
 
-gem 'responders',          github: 'plataformatec/responders'
-gem 'inherited_resources', github: 'josevalim/inherited_resources'
-gem 'ransack',             github: 'ernie/ransack', branch: 'rails-4'
+gem 'responders'#,          github: 'plataformatec/responders'
+gem 'inherited_resources'#, github: 'josevalim/inherited_resources'
+gem 'ransack'#,             github: 'activerecord-hackery/ransack', branch: 'rails-4'
 gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
-gem 'formtastic',          github: 'justinfrench/formtastic'
+gem 'formtastic'#,          github: 'justinfrench/formtastic'
 gem "paperclip"
 
 gem 'validates_email_format_of'
+gem 'negative_captcha', :git => "git://github.com/Karajlug/negative-captcha.git"

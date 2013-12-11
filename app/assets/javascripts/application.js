@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery.scrollUp.min
 //= require scrollTo.min
 //= require_tree .
