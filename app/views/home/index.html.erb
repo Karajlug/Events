@@ -1,6 +1,14 @@
 <section class="address" id="last-event">
   <div class="container">
     <div class="row">
+      <div class="row">
+      <% flash.each do |key, value| %>
+        <div id="alert" class="span10 offset1 alert alert-<%= key %>">
+          <button type="button" class="close pull-left" data-dismiss="alert" onclick="$('#alert').fadeOut();">&times;</button>
+          <%= value %>
+        </div>
+      <% end %>
+      </div>
       <div class="span6">
         <div id="intro">
           <div class="logo"></div>
@@ -67,13 +75,6 @@
             <div class="regform">
                 <br><br>
                 <div class="forminput">
-                  <% flash.each do |key, value| %>
-                      <div id="alert" class="alert alert-<%= key %>">
-                        <button type="button" class="close pull-left" data-dismiss="alert" onclick="$('#alert').fadeOut();">&times;</button>
-                        <%= value %>
-                      </div>
-                  <% end %>
-
                   <%= f.text_field :email, placeholder: t(:email) + " ...", id: :email %><br />
                   <span><%=t :form_msg %></span> <%= f.submit t(:submit), class: "btn btn-inverse", id: "submit" %>
 
@@ -89,23 +90,35 @@
 
 <section class="sponsors" id="sponsors">
   <div class="container">
-    <h1><%=t :sponsors %>:</h1>
+    <div class="row">
+      <div class="span3 offset1">
+        <h1><%=t :sponsors %>:</h1>
+      </div>
+    </div>
+    <br /><br />
 
     <div class="row">
 
-      <div class="span3 text-center">
-        <a href="//karaj.ir"><%= image_tag("muni.png") %></a>
-      </div>
-      <div class="span4 text-center" style="margin-top: 50px;">
-        <a href="//karanic.com"><%= image_tag("karanic.png") %></a>
+      <div class="span3 offset1 text-center" style="margin-top: 80px;">
+        <a href="//jalborz.ir"><%= image_tag("jahad.png") %></a>
       </div>
       <div class="span4 text-center" style="margin-top: 110px;">
         <a href="//yellowen.com" ><%= image_tag("yellowen.png") %></a>
       </div>
 
+      <div class="span3 text-center" style="margin-top: 70px;">
+        <a href="//karanic.com"><%= image_tag("karanic.png") %></a>
+      </div>
 
     </div>
 
+    <div class="row sponsorship">
+      <div class="span6 offset3 text-center">
+        <p>
+          <%=t :sponsorship_html %>
+        </p>
+      </div>
+    </div>
   </div>
   <div class="clearfix"></div>
 </section>

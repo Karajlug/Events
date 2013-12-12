@@ -3,14 +3,42 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .new_participant {
   padding: 40px;
-  margin-bottom: 150px;
+  margin-bottom: 450px;
   .field {
     label {
       line-height: 1;
     }
     margin: 20px;
     span {
+      font-size: 0.8em;
       display: block;
+      &.desc {
+        color: gray;
+      }
+      &.error {
+        color: #C15348;
+      }
     }
   }
+}
+
+.alert {
+  position: absolute;
+  top: 50px;
+}
+
+#error_explanation {
+  background: #F2DEDE;
+  border: 1px solid #EED3D7;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 50px;
+  color: #C15348;
+  ul {
+    list-style: none;
+  }
+}
+
+.sponsorship {
+  margin-top: 150px;
 }

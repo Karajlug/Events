@@ -7,11 +7,15 @@ class ParticipantsController < ApplicationController
   end
 
   def create
+    @event = Event.find(params[:id])
     @participant = Participant.new(@captcha.values)
+    @participant.event = @event
     if @captcha.valid? and @participant.save
+      flash[:success] = t("You registered to this event")
       redirect_to root_path
     else
-      flash[:notice] = @captcha.error if @captcha.error
+      flash[:error] = @captcha.error if @captcha.error
+      puts ">>>>> ", @participant.errors.to_json
       render :action => 'new'
     end
   end

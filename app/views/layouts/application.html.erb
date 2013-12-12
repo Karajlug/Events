@@ -8,7 +8,7 @@
   <meta name="author" content="Sameer Rahmani - Behnam Ahmad Khan Beigi - Ebrahim Byagowi">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SFD2013</title>
+  <title><%=t :site_title %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -41,12 +41,13 @@
       <a class="brand" href="//karajlug.org"></a>
       <div class="nav-collapse collapse">
         <ul class="nav" id="topnav">
-          <li><a href="/"><%=t :home %></a></li>
           <% if request.path == "/" %>
           <li><a href="#last-event"><%=t :last_event %></a></li>
           <li><a href="#events"><%=t :events %></a></li>
           <li><a href="#i-want-to-participate"><%=t :i_want_to_participate %></a></li>
           <li><a href="#sponsors"><%=t :sponsors %></a></li>
+          <% else %>
+          <li><a href="/"><%=t :home %></a></li>
           <% end %>
         </ul>
         <ul class="nav pull-left" id="socialicon">
@@ -60,10 +61,6 @@
 
 
     <div class="maincontainer">
-      <% if alert or notice %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      <% end %>
       <%= yield %>
     </div>
 
