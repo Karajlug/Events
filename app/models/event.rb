@@ -16,4 +16,8 @@ class Event < ActiveRecord::Base
   def self.past
     self.where(["datetime < ?", DateTime.now()])
   end
+
+  def finished?
+    self.datetime < DateTime.now
+  end
 end

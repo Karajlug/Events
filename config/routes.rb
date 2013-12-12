@@ -1,5 +1,7 @@
 SFD2013::Application.routes.draw do
 
+  get "events/index"
+  get "events/show"
   get "home/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
 
@@ -13,11 +15,8 @@ SFD2013::Application.routes.draw do
 
   get "events/:id/register", :to => "participants#new", :as => "registeration"
   post "events/:id/register", :to => "participants#create", :as => "registeration_post"
-
-  get "gallery" => "gallery#index"
-  get "gallery/:id/pictures" => "gallery#pictures", :as => :album_pictures
-  get "gallery/:id/videos" => "gallery#videos", :as => :album_videos
-  get "gallery/:id/docs" => "gallery#docs", :as => :album_docs
+  get "events", :to => "events#index"
+  get "events/:id", :to => "events#show", :as => :show_event
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
