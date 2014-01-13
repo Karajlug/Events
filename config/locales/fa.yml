@@ -1,4 +1,7 @@
 fa:
+  been_held: "برگذار شده است"
+  address: "آدرس"
+  time_string: "زمان"
   register_now: "ثبت نام"
   "is not looking good": "فرمت پست الکترونیک صحیح نیست"
   please_fix_the_mistakes: "لطفا موارد خواسته شده را تکمیل کنید."

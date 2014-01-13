@@ -9,7 +9,11 @@ class HomeController < ApplicationController
     if @event
       @days = (Date.new(@event.datetime.year,
                         @event.datetime.month,
-                        @event.datetime.day)- Date.today).to_i.to_s.to_persian
+                        @event.datetime.day)- Date.today).to_i
+      if @days < 0
+        @days = "0"
+      end
+      @days.to_s.to_persian
     else
       @days = "0".to_persian
     end
