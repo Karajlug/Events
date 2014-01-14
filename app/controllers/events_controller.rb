@@ -17,7 +17,8 @@ class EventsController < ApplicationController
     if I18n.locale == :fa
       @reverse_dir = "rtl"
     end
-    @event_datetime = @event.datetime.to_s(:db).to_persian
+    @event_datetime = @event.datetime.to_s(:short).in_time_zone('Tehran').to_s
+    @event_datetime = @event_datetime.to_persian
     @event_datetime.gsub!("-", "/")
     @event_datetime.gsub!(" ", " -  ")
     @event_datetime = @event_datetime.split(":")[0..1].join(":")
