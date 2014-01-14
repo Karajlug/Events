@@ -17,9 +17,9 @@
           </div>
         </div>
         <div class="row">
-          <div class="span5 desc float-right"><p><%= @event.description %></p></div>
+          <div class="span5 desc float-right"><p><%= @event.description.gsub("\n", "<br/>").html_safe %></p></div>
           <div class="span5 float-left desc">
-            <p><span><%=t :address %>:<br /> <span><%= @event.address %></span></span></p>
+            <p><span><%=t :address %>:<br /><br /> <span><%= @event.address %></span></span></p>
           </div>
         </div>
         <div class="row">
