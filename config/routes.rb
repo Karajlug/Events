@@ -2,6 +2,7 @@ SFD2013::Application.routes.draw do
 
   get "events/index"
   get "events/show"
+  get "events/full", :as => "event_is_full"
   get "home/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
 

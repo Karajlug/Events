@@ -3,6 +3,9 @@ ActiveAdmin.register Event do
     column :id
     column :name
     column :datetime
+    column :image_album_url
+    column :video_album_url
+    column :capacity
     column :address
     column :description
     default_actions
@@ -14,8 +17,13 @@ ActiveAdmin.register Event do
     f.inputs "Event" do
       f.input :name
       f.input :datetime, :as => :datetime
+      f.input :image_album_url
+      f.input :video_album_url
+      f.input :need_registration, :as => :boolean
+      f.input :capacity
       f.input :address
       f.input :description
+
     end
 
     f.actions
@@ -23,7 +31,7 @@ ActiveAdmin.register Event do
 
   controller do
     def permitted_params
-      params.permit(:media => [:name, :datetime, :address, :description])
+      params.permit(:event => [:name, :datetime, :address, :description, :need_registration, :image_album_url, :video_album_url, :capacity])
     end
   end
 

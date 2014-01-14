@@ -6,7 +6,9 @@ class CreateEvents < ActiveRecord::Migration
       t.text :address
       t.datetime :datetime
       t.boolean :need_registration
-
+      t.string :image_album_url
+      t.string :video_album_url
+      t.integer :capacity
       t.timestamps
     end
   end

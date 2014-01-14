@@ -21,7 +21,7 @@
         <div id="days">
           <h1><%= @days %></h1>
           <h2><%=t :ramaining_msg %></h2>
-          <% if @event and @event.need_registration %><br />
+          <% if @event and @event.need_registration and not @event.finished? %><br />
             <a href="/events/<%= @event.id %>/register" class="btn btn-large btn-inverse"><%=t :register_now %></a>
           <% end %>
           <ul id="share_this" class="vertical">

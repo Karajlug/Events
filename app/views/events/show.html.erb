@@ -1,17 +1,41 @@
 <section id="last-event">
   <div class="content">
     <div class="row">
-      <div class="span10 offset1 event">
+      <div class="span10 offset2 event">
         <div class="row">
-          <h2><%= @event.name %></h2><% if @event.finished? %><i class="icon icon-check 2x"></i> <span><%=t :been_held %></span><% end %>
+          <div class="span7">
+            <h2><%= @event.name %></h2><% if @event.finished? %><span class="label label-success"><i class="icon icon-check 2x"></i> <%=t :been_held %></span><% end %>
+          </div>
+          <div class="span3 text-right buttons">
+            <br />
+            <% if @event.finished? %>
+              <a href=<% if not @event.image_album_url.empty? %>"<%= @event.image_album_url %>"<% else %>"#"<% end %> class="btn btn-info <% if @event.image_album_url.empty? %>disabled<% end %>"><i class="icon icon-camera"></i> <%=t :images %></a>
+              <a href=<% if not @event.video_album_url.empty? %>"<%= @event.video_album_url %>"<% else %>"#"<% end %> class="btn btn-success <% if @event.video_album_url.empty? %>disabled<% end %>"><i class="icon icon-film"></i> <%=t :videos %></a>
+            <% elsif @event.need_registration %>
+              <a href="/events/<%= @event.id %>/register" class="btn btn-inverse icon-large float-left"><%=t :register_now %></a>
+            <% end %>
+          </div>
         </div>
         <div class="row">
-          <p class="span12 desc"><%= @event.description %></p>
+          <div class="span5 desc float-right"><p><%= @event.description %></p></div>
+          <div class="span5 float-left desc">
+            <p><span><%=t :address %>:<br /> <span><%= @event.address %></span></span></p>
+          </div>
         </div>
         <div class="row">
-        <h4 class="span6"><%=t :time_string %>: <span dir="<%= @reverse_dir %>"><%= @event.datetime.to_s(:db).to_persian %></span></h4><br />
-        <h4 class="span6"><%=t :address %>: <span><%= @event.address %></span></h4>
+          <span class="span6"><i class="icon icon-time"></i> <span dir="<%= @reverse_dir %>"><%= @event.datetime.to_s(:db).to_persian %></span></span>
         </div>
+        <br /><br />
+        <% if not @event.resources.empty? %>
+        <div class="row">
+          <h2><%=t :resources %>:</h2>
+          <ul>
+            <% @event.resources.each do |resource| %>
+              <li><a href="<%= resource.url %>"><%= resource.name %></a> - <%= resource.desc %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>

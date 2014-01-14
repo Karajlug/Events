@@ -1,8 +1,9 @@
-ActiveAdmin.register Media do
+ActiveAdmin.register Resource do
   index do
     column :id
+    column :name
+    column :url
     column :event
-    column :file
     column :desc
     default_actions
   end
@@ -10,17 +11,19 @@ ActiveAdmin.register Media do
   filter :id
 
   form do |f|
-    f.inputs "Album" do
+    f.inputs "Resource" do
+      f.input :name
+      f.input :url
       f.input :event_id, :as => :select, :collection => Event.all
-      f.input :file, :as => :file
       f.input :desc
     end
+
     f.actions
   end
 
   controller do
     def permitted_params
-      params.permit(:media => [:event_id, :file, :desc])
+      params.permit(:resource => [:name, :url, :event_id, :desc])
     end
   end
 
