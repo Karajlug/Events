@@ -1,4 +1,4 @@
-ActiveAdmin.register Event do
+ActiveAdmin.register Participant do
   index do
     column :id
     column :first_name
