@@ -43,7 +43,7 @@
       <% if @future_events.count > 0 %>
         <ul>
           <% @future_events.each do |event| %>
-            <li>[<%= event.datetime.strftime("%Y/%m/%d") %>] <a href="<%= show_event_path(event) %>"><%= event.name %></a></li>
+            <li>[<%= event.datetime.strftime("%Y/%m/%d") %>] <a href="<%= event_path(event) %>"><%= event.name %></a></li>
           <% end %>
         </ul>
       <% else %>
@@ -55,7 +55,7 @@
       <% if @past_events.count > 0 %>
         <ul>
           <% @past_events.each do |event| %>
-            <li>[<%= event.datetime.strftime("%Y/%m/%d") %>] <a href="<%= show_event_path(event) %>"><%= event.name %></a></li>
+            <li>[<%= event.datetime.strftime("%Y/%m/%d") %>] <a href="<%= event_path(event) %>"><%= event.name %></a></li>
           <% end %>
         </ul>
       <% else %>

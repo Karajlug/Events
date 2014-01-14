@@ -1,3 +1,12 @@
+<% content_for :header do %>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@karajlug">
+  <meta name="description" content="<%=t :karaj_lug_running_sfd %>: <%= @event.name %>">
+  <meta name="twitter:url" content="<%= event_url(@event) %>">
+  <meta name="twitter:title" content="<%= @event.name %>">
+  <meta name="twitter:description" content="<%= @event.description.gsub("\n", "<br/>") %>">
+<% end %>
+
 <section id="last-event">
   <div class="content">
     <div class="row">
@@ -24,6 +33,13 @@
         </div>
         <div class="row">
           <span class="span3 timestamp"><i class="icon icon-time"></i> <span class="green" dir="<%= @reverse_dir %>"><%= @event_datetime %></span></span>
+          <div class="span3 offset4 float-left text-left share_it">
+            <span><%=t :share_it %>:</span>
+            <a href="https://twitter.com/share?via=karajlug&text=<%= URI.escape(@event.name) %>&url=<%= URI.escape(event_url(@event)) %>"><i class="icon icon-twitter icon-large"></i></a> |
+            <a href="http://www.facebook.com/sharer.php?u=<%= URI.escape(event_url(@event)) %>&t=<%= URI.escape(@event.name) %>"><i class="icon icon-facebook icon-large"></i></a> |
+            <a href="https://plus.google.com/share?url=<%= URI.escape(event_url(@event)) %>"><i class="icon icon-google-plus icon-large"></i></a>
+
+          </div>
         </div>
         <br /><br />
         <% if not @event.resources.empty? %>

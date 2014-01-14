@@ -1,7 +1,5 @@
 SFD2013::Application.routes.draw do
 
-  get "events/index"
-  get "events/show", :as => "event"
   get "events/full", :as => "event_is_full"
   get '/feed' => 'events#feed',
   :as => :feed,
@@ -21,7 +19,7 @@ SFD2013::Application.routes.draw do
   get "events/:id/register", :to => "participants#new", :as => "registeration"
   post "events/:id/register", :to => "participants#create", :as => "registeration_post"
   get "events", :to => "events#index"
-  get "events/:id", :to => "events#show", :as => :show_event
+  get "events/:id", :to => "events#show", :as => "event"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
