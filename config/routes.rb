@@ -1,8 +1,12 @@
 SFD2013::Application.routes.draw do
 
   get "events/index"
-  get "events/show"
+  get "events/show", :as => "event"
   get "events/full", :as => "event_is_full"
+  get '/feed' => 'events#feed',
+  :as => :feed,
+  :defaults => { :format => 'atom' }
+
   get "home/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
 

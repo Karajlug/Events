@@ -15,4 +15,15 @@ class EventsController < ApplicationController
       @reverse_dir = "rtl"
     end
   end
+
+  def feed
+    @title = t(:future_events)
+    @future_events = Event.future.limit(20)
+    @updated = @future_events.last.updated_at unless @future_events.empty?
+
+    respond_to do |f|
+      f.atom { render :layout => false }
+      f.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
+    end
+  end
 end
