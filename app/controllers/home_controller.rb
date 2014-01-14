@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 
     @user = User.new
     # nearest_event
-    @event = Event.future.order('-datetime').last
+    @event = Event.future.first
     if @event
       @days = (Date.new(@event.datetime.year,
                         @event.datetime.month,
@@ -21,6 +21,6 @@ class HomeController < ApplicationController
     @future_events = Event.future.limit(10)
     @past_events = Event.past.limit(10).reverse
     @loc = I18n.default_locale
-
+    flash = {}
   end
 end

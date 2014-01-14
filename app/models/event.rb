@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
   has_many :resources
 
   def self.future
-    self.where(["datetime > ?", DateTime.now()]).order('-datetime')
+    self.where(["datetime > ?", DateTime.now()]).order('datetime')
   end
 
   def self.past

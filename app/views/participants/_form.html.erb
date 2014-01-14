@@ -11,7 +11,7 @@
   <%= form_for @participant, :url => "/events/#{@event.id}/register" do |f| %>
   <fieldset class="span10 offset1">
     <legend><%=t :registeration %></legend>
-    <p><%=t :event_registeration_details %></p>
+    <p><%=t :reg_details %></p>
 
     <%= raw negative_captcha(@captcha) %>
     <div class="row">
