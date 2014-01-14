@@ -63,7 +63,7 @@ end
 gem 'responders'#,          github: 'plataformatec/responders'
 gem 'inherited_resources'#, github: 'josevalim/inherited_resources'
 gem 'ransack'#,             github: 'activerecord-hackery/ransack', branch: 'rails-4'
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin', :github => "gregbell/active_admin"
 gem 'formtastic'#,          github: 'justinfrench/formtastic'
 gem "paperclip"
 
