@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="row">
-          <span class="span6"><i class="icon icon-time"></i> <span dir="<%= @reverse_dir %>"><%= @event.datetime.to_s(:db).to_persian %></span></span>
+          <span class="span3 timestamp"><i class="icon icon-time"></i> <span class="green" dir="<%= @reverse_dir %>"><%= @event_datetime %></span></span>
         </div>
         <br /><br />
         <% if not @event.resources.empty? %>
