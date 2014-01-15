@@ -1,5 +1,5 @@
 #! /bin/bash
-
+RAILS_ENV=production bundle exec rake tmp:clear
 pushd ${OPENSHIFT_REPO_DIR} > /dev/null
 echo "Migrating database ..."
 RAILS_ENV=production bundle exec rake db:migrate

@@ -4,8 +4,8 @@ require "persian_string"
 class EventsController < ApplicationController
 
   def index
-    @future_events = Event.future.limit(100)
-    @past_events = Event.past.limit(100).reverse
+    @future_events = Event.order("datetime DESC").future.limit(100)
+    @past_events = Event.order("datetime ASC").past.limit(100).reverse
   end
 
   def full
