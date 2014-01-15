@@ -19,7 +19,7 @@ class HomeController < ApplicationController
     end
 
     @future_events = Event.future.limit(10)
-    @past_events = Event.past.limit(10).reverse
+    @past_events = Event.order("datetime").past.limit(10).reverse
     @loc = I18n.default_locale
     flash = {}
   end
