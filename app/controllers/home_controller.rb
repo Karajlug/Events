@@ -18,8 +18,8 @@ class HomeController < ApplicationController
       @days = "0".to_persian
     end
 
-    @future_events = Event.future.limit(10)
-    @past_events = Event.order("datetime").past.limit(10).reverse
+    @future_events = Event.order("datetime ASC").future.limit(10)
+    @past_events = Event.order("datetime ASC").past.limit(10).reverse
     @loc = I18n.default_locale
     flash = {}
   end
