@@ -69,3 +69,4 @@ gem "paperclip"
 
 gem 'validates_email_format_of'
 gem 'negative_captcha', :git => "git://github.com/Karajlug/negative-captcha.git"
+gem 'rest-client'
