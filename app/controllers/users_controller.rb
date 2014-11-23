@@ -1,3 +1,5 @@
+require 'mailing_list'
+
 class UsersController < ApplicationController
 
   def create
@@ -5,6 +7,7 @@ class UsersController < ApplicationController
 
     if user.save
       flash[:success] = t(:success)
+      ML.add_user(user)
     else
       flash[:error] = t(:error)
     end
