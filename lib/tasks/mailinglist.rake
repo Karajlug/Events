@@ -12,4 +12,10 @@ namespace :users do
                       :address => user.email)
     end
   end
+
+  desc 'send the last event notify to mailing list'
+  task :lastevent => :environment do
+    event = Event.last
+    Newsletter.send_newsletter("New event", event)
+  end
 end
