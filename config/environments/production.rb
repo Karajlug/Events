@@ -78,5 +78,12 @@ SFD2013::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   config.assets.precompile += %w( style_rtl.css style_ltr.css fancybox.css fancybox.js )
-  config.action_mailer.default_url_options = { :host => 'sfd.karajlug.org' }
+  config.action_mailer.default_url_options = { :host => 'events.karajlug.org' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {:authentication => :plain,
+                                        :address => "smtp.mailgun.org",
+                                        :port => 587,
+                                        :domain => "karajlug.mailgun.org",
+                                        :user_name => "postmaster@karajlug.org",
+                                        :password => ENV['MG_PASSWORD']}
 end

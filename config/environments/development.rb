@@ -25,4 +25,12 @@ SFD2013::Application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   config.assets.debug = true
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {:authentication => :plain,
+                                        :address => "smtp.mailgun.org",
+                                        :port => 587,
+                                        :domain => "karajlug.mailgun.org",
+                                        :user_name => "postmaster@karajlug.org",
+                                        :password => ENV['MG_PASSWORD']}
+
 end
